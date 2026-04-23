@@ -43,13 +43,13 @@ Where possible, terminology aligns with `GLOSSARY.md`.
 
 * Rules are written once and interpreted many times
 * Meaning drifts across systems, teams, and years
-* Compliance is demonstrated narratively
+* Conformance is demonstrated narratively
 
 **512 model:**
 
 * Rules are defined once and enforced mechanically
 * Meaning must be explicit, symmetric, and executable
-* Compliance is demonstrated through execution behavior
+* Conformance is demonstrated through execution behaviour
 
 Interpretation moves downstream. Definition moves upstream.
 
@@ -66,7 +66,7 @@ Interpretation moves downstream. Definition moves upstream.
 **512 model:**
 
 * Exceptions that cannot be expressed as constraints must not execute
-* Non‑admissible actions fail fast
+* Non‑admissible actions are denied at the boundary
 * Edge cases are redesigned or relocated downstream
 
 Grace periods are a liability under machine speed.
@@ -119,22 +119,30 @@ Key glossary concepts:
 
 * *Execution*
 * *Runtime*
-* *Irreversibility*
+* *Commit Boundary*
 
 ---
 
-### 3. Fail‑Fast Design Thinking
+### 3. Fail‑Open Design Thinking
 
 Ability to:
 
-* redesign processes so invalid actions refuse to execute
-* replace remediation with prevention
-* eliminate silent tolerance paths
+* design systems so invalid actions are denied at the boundary —
+  not blocked by infrastructure failure
+* understand that when the gate cannot evaluate, execution proceeds
+  and the witness layer records the ungoverned period
+* eliminate silent tolerance paths while preserving availability
+
+The system denies non-admissible actions through constraint
+evaluation. When evaluation cannot complete, execution proceeds
+under fail-open (Invariant 6) — availability is preserved and
+the ungoverned period is recorded as an evidence chain gap.
 
 Key glossary concepts:
 
-* *Fail‑fast*
-* *Pre‑commitment*
+* *Fail‑Open*
+* *Gate Output*
+* *Evidence Chain Gap*
 
 ---
 
@@ -149,8 +157,8 @@ Ability to:
 Key glossary concepts:
 
 * *CVS*
-* *Evidence plane*
-* *Replay*
+* *Evidence Chain Gap*
+* *Spec Hash*
 
 ---
 
@@ -165,8 +173,8 @@ Ability to:
 Key glossary concepts:
 
 * *Machine‑speed*
-* *Human‑speed*
 * *Latency*
+* *Upstream*
 
 ---
 
@@ -177,8 +185,10 @@ Professionals transitioning to 512 should become fluent in:
 * admissible / non‑admissible
 * pre‑execution vs post‑execution
 * constraint surface
-* execution boundary
-* fail‑fast
+* commit boundary
+* exclusive commit authority
+* fail‑open
+* evidence chain gap
 * disjoint evidence
 * irreversible action
 * binary decision
@@ -238,9 +248,11 @@ It is a **structural retraining of authority**.
 
 ## Consulting as Reality Check
 
-Constraint Architects may be engaged in a consulting capacity, but only in a narrowly defined way.
+Constraint Architects may be engaged in a consulting capacity,
+but only in a narrowly defined way.
 
-They are not hired to optimize outcomes, negotiate trade-offs, or recommend features.
+They are not hired to optimize outcomes, negotiate trade-offs,
+or recommend features.
 
 They are hired to answer a structural question:
 
@@ -256,10 +268,12 @@ In this mode, the Constraint Architect:
 The output is not a roadmap.
 The output is a conclusion.
 
-In many cases, this analysis converges on the same result: the system requires an execution admissibility kernel.
+In many cases, this analysis converges on the same result: the
+system requires an execution admissibility kernel.
 
 This is not advocacy for a specific implementation.
-It is a consequence of removing runtime interpretation, escalation, and exception handling.
+It is a consequence of removing runtime interpretation, escalation,
+and exception handling.
 
 Once those are removed, execution collapses into a binary:
 
@@ -271,10 +285,13 @@ If an action cannot survive that collapse, it must move downstream.
 The Constraint Architect does not "sell" a kernel.
 They demonstrate when a kernel is inevitable.
 
+---
+
 ## Final Note
 
 Constraint Architects do not act as general consultants.
 
 They perform reality checks under constraint.
 
-Their value is not in proposing solutions, but in revealing which solutions cannot exist.
+Their value is not in proposing solutions, but in revealing which
+solutions cannot exist.
