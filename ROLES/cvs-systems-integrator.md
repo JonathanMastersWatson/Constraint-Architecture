@@ -1,8 +1,12 @@
 # CVS Systems Integrator
 
-A **CVS Systems Integrator** designs and deploys Cryptographic Verification Systems (CVS) across complex, heterogeneous environments without altering execution paths.
+A **CVS Systems Integrator** designs and deploys the Cryptographic
+Verification Sidecar (CVS) across complex, heterogeneous environments
+without altering execution paths.
 
-This role exists because CVS is intentionally **disjoint** from execution. Integration therefore requires architectural discipline, not feature development.
+This role exists because CVS is intentionally **disjoint** from
+execution. Integration therefore requires architectural discipline,
+not feature development.
 
 ---
 
@@ -11,7 +15,7 @@ This role exists because CVS is intentionally **disjoint** from execution. Integ
 A CVS Systems Integrator is responsible for:
 
 - identifying where execution evidence should be captured
-- exposing appropriate observation points (“ports to listen on”)
+- exposing appropriate observation points ("ports to listen on")
 - ensuring evidence is complete, immutable, and attributable
 - integrating CVS with existing infrastructure without introducing runtime risk
 
@@ -30,7 +34,7 @@ A CVS Systems Integrator does **not**:
 - remediate failures
 - introduce control loops
 
-CVS observes.  
+CVS observes.
 Execution remains untouched.
 
 ---
@@ -46,9 +50,10 @@ Most enterprises already have:
 
 CVS replaces narrative reconstruction with **mechanical receipts**.
 
-But CVS cannot simply be “turned on.”
+But CVS cannot simply be "turned on."
 
 It must be **integrated carefully**, or it risks:
+
 - performance degradation
 - partial observability
 - false confidence
@@ -77,7 +82,7 @@ A CVS Systems Integrator typically performs:
   - agent frameworks
   - data pipelines
   - industrial control systems
-- Ensure compatibility with existing security and compliance tooling
+- Ensure compatibility with existing security and conformance tooling
 
 ### 4. Evidence Integrity Assurance
 - Guarantee immutability
@@ -101,22 +106,25 @@ Strong CVS Systems Integrators often come from:
 - audit systems engineering
 - regulated industry IT (finance, energy, manufacturing)
 
-They are typically trusted with production systems because they **do not change behavior** — they observe it.
+They are typically trusted with production systems because they
+**do not change behavior** — they observe it.
 
 ---
 
 ## Relationship to Other Roles
 
-- **Constraint Architect**  
-  Defines execution boundaries and canonical primitives. Does not integrate systems.
+- **Constraint Architect**
+  Defines execution boundaries and canonical primitives. Does not
+  integrate systems.
 
-- **512-Compliant Consultant**  
-  Refactors workflows to pass execution-time constraints. Works upstream of CVS.
+- **512 Integration Specialist**
+  Ensures systems satisfy 512's properties at the commit boundary.
+  Works upstream of CVS.
 
-- **CVS Specialist**  
+- **CVS Specialist**
   Analyzes, replays, and interprets evidence after it exists.
 
-- **CVS Systems Integrator**  
+- **CVS Systems Integrator**
   Makes evidence exist in the first place — cleanly and safely.
 
 ---
@@ -130,7 +138,8 @@ A properly integrated CVS:
 - compresses liability exposure
 - replaces narrative trust with evidence
 
-A CVS Systems Integrator ensures this value is achieved **without destabilizing execution**.
+A CVS Systems Integrator ensures this value is achieved
+**without destabilizing execution**.
 
 ---
 
@@ -138,6 +147,7 @@ A CVS Systems Integrator ensures this value is achieved **without destabilizing 
 
 CVS succeeds precisely because it does not intervene.
 
-The CVS Systems Integrator’s job is to preserve that separation — even under pressure to “just add control.”
+The CVS Systems Integrator's job is to preserve that separation —
+even under pressure to "just add control."
 
 That restraint is the skill.
