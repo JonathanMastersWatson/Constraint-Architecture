@@ -1,4 +1,4 @@
-# CVS — Cryptographic Verification System
+# CVS — Cryptographic Verification Sidecar
 
 CVS is a disjoint evidence plane that records execution without influencing it.
 
