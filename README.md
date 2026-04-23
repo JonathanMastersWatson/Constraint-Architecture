@@ -88,10 +88,15 @@ execution at machine speed can be considered legitimate.
 
 512 is:
 
-- binary — allow / deny / gap
+- binary — ALLOW or DENY
 - deterministic — identical inputs produce identical outputs
 - non-interpretive — no discretion, no scoring, no weighting
 - enforced at the commit boundary — the point of irreversible state change
+
+When the gate cannot complete evaluation, it produces no output.
+Execution proceeds under the fail-open posture required by Invariant 6.
+The witness layer records the ungoverned period as an evidence chain gap.
+That gap record is a witness layer classification — not a gate output.
 
 512 is not:
 
@@ -128,14 +133,15 @@ This repository defines **roles**, not organisations.
 
 **Constraint Architect**
 Defines execution boundaries and admissible state spaces upstream of
-enforcement. Translates domain requirements into pre-committed
-constraint specifications. Works at the boundary between human
-authority and machine execution.
+enforcement. Translates domain policy into binary-reducible constraint
+definitions ready for compilation. Works at the boundary between human
+authority and machine execution. The output of this role is a compiled
+constraint set — not a policy document.
 
 **512 Integration Specialist**
 Helps systems satisfy 512's properties at the commit boundary.
 Identifies execution paths, maps them to invariant requirements,
-and verifies that all paths cross the boundary.
+and verifies that all paths cross the boundary under gate control.
 
 **CVS Specialist**
 Designs, integrates, and interprets execution evidence planes.
@@ -214,10 +220,10 @@ It becomes the constraint definition layer.
 
 ## Repository Structure
 ```
-CANON/          — canonical definitions and primitives
-CONSTRAINT_TOOLS/ — tools and frameworks for constraint definition
-ROLES/          — role definitions and competency models
-WHITEPAPERS/    — research and analysis
-GLOSSARY.md     — canonical terminology
-README.md       — this document
+CANON/              — canonical definitions and primitives
+CONSTRAINT_TOOLS/   — tools and frameworks for constraint definition
+ROLES/              — role definitions and competency models
+WHITEPAPERS/        — research and analysis
+GLOSSARY.md         — canonical terminology
+README.md           — this document
 ```
